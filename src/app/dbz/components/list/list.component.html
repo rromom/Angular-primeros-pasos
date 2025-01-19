@@ -1,0 +1,44 @@
+<h4> List </h4>
+<ul class="list-group">
+              <!-- Marca el indice en del character
+              let i = index;
+              Expresición Booleana donde verifica si el elemento  es el primero y devuelve true si asi es
+              let isFirst = first;
+              Expresion Booleana donde verifica si el elemento es el ultimo y devuelve tru si asi es
+              let isLast = last"  -->
+  <li *ngFor="let character of characterList;
+              let i = index;
+              let isFirst = first;
+              let isLast = last;
+              let isEven = even;
+              let isOdd = odd"
+              class="list-group-item d-flex justify-content-between align-items-center"
+              [ngClass]="{  'list-group-item-success': isLast,
+                            'list-group-item-primary': isEven,
+                         }"
+              >
+    <div>
+
+      <span class="text-primary"> {{ i + 1 }}. </span>
+
+      <span> {{ character.name }} - </span>
+
+      <strong> Power: </strong>
+
+      <span> {{ character.power }} </span>
+
+      <!-- <span>Is First: {{ isFirst }} </span>
+
+      <span>Is Last: {{ isLast }} </span>
+
+      <span>Is Even: {{ isEven }} </span>
+
+      <span>Is Odd : {{ isOdd }} </span> -->
+
+
+    </div>
+
+    <button class="btn btn-danger" (click)="onDeleteCharacter( character.id )" > x </button>
+
+  </li>
+</ul>
